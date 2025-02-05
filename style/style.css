@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* declarando variables en cs */
+:root{
+  --color-primario:#27445D;
+  --color-secundario:#A9C46C;
+  --color-terciario:#FBA518;
+  --color-hover:#272727;
+  --fuente-montserrat:'Montserrat',sans serif;
+  --fuente-krona:'Krona One', sans serif;
+} 
+
+/* a esto se le llama reseteo del css */
+*{
+  padding: 0; 
+  margin : 0;
+}
+
+body {
+    box-sizing: border-box;  /* El ancho y alto del elemento incluyen el contenido, el padding y el borde */
+    background-color: var(--color-primario); /* establece el color de fondo de un elemento HTML */
+    color: var(--color-secundario); /* establece el color del texto de un elemento HTML */
+  }
+
+  .header{
+    padding: 2% 0% 0% 15%; /* Establece la cantidad de espacio entre el contenido de un elemento y su borde */
+  } 
+
+  .header__menu{
+    display: flex; /* Convierte al elemento en un cotenedor flex */
+    gap: 80px; /* Establece el espacio entre los elementos  en contenedor flex o grid */
+  }
+
+  .header__menu__link{
+    font-family: var(--fuente-montserrat); /* tipo de fuente */
+    font-size: 1.5rem; /* tamaño de fuente */
+    font-weight: 600; /* controla el grosor o peso de la fuente de texto */
+    color: var(--color-terciario); /* establece el color del texto de un elemento HTML */
+    text-decoration: none; /* asigna decoracion al texto */
+  }
+
+  .presentacion{
+    padding: 6% 15%; /* Establece la cantidad de espacio entre el contenido de un elemento y su borde */
+    display: flex; /* Convierte al elemento en un cotenedor flex */
+    align-items: center; /* Controla la alineación de los elementos flex */
+    justify-content: space-between; /* controla la alineación de los elementos flex */
+    gap:82px; /* agrega espacios entre cada cuadrado */
+  }
+
+  .presentacion_contenido{
+    width: 50%;
+    display: flex;  /* coloca los cuadrados uno al lado del otro */
+    flex-direction: column;  /* los cuadrados se posicionan verticalmente */
+    gap: 40px;  /* agrega espacios entre cada cuadrado */
+  }
+
+  .presentacion_contenido_titulo{
+    font-size: 2.25rem; /* tamaño de fuente */
+    font-family: var(--fuente-krona); /* tipo de fuente */
+  }
+
+  .titulo_destaque{
+    color: var(--color-terciario); /* define color */
+  }
+
+  .presentacion_contenido_texto{
+    font-size: 1.5rem; /* tamaño de fuente */
+    font-family: var(--fuente-montserrat); /* tipo de fuente */
+  }
+
+  .presentacion_enlaces{
+    display: flex; /* coloca los cuadrados uno al lado del otro */
+    justify-content: space-between; /* controla la alineación de los elementos flex */
+    flex-direction: column; /* controla la dirección en la que se apilan los elementos flex*/
+    align-items: center; /* Controla la alineación de los elementos flex */
+    gap: 32px; /* agrega espacios iguales entre cada cuadrado */
+  }
+
+  .presentacion__enlaces__link{
+    display: flex; /*alinea elementos de la clase */
+    justify-content: center; /*justifica elementos en el centro */
+    gap: 10px; /*asigna espacio entre elementos */
+    border: 2px solid var(--color-terciario); /*color, tipo y espesor de botones */
+    width: 50%; /* ancho del boton */
+    text-align: center; /* alinea al centro la letra en boton */
+    padding: 21.5px 0; /* define la distancia entre un contenido y sus bordes */
+    border-radius: 8px; /* borde del boton */
+    font-family: var(--fuente-montserrat); /* asigna tipo de letra */
+    font-size: 1.5rem; /* asigna tamaño de letra */
+    font-weight: 600px; /* controla el grosor o peso de la fuente de texto */
+    text-decoration: none; /* asigna decoracion al texto */
+    color: var(--color-secundario);  /*color de letra de botones */
+  }
+
+  .presentacion_enlaces_subtitulo{
+    font-family: var(--fuente-krona); /* asigna tipo de letra */
+    font-size: 1.5rem;  /* asigna tamaño de letra */
+    font-weight: 400; /* asigna peso de la fuente */
+
+  }
+
+  .presentacion__enlaces__link:hover{
+    background-color: var(--color-hover); /* al pasar el cursor cambia de color */
+  }
+
+  .presentacion__imagen{
+    width: 50%;
+  }
+
+  .footer{
+    background-color: var(--color-terciario); /* establece el color de fondo de un elemento HTML */
+    padding: 1.5rem; /* Establece la cantidad de espacio entre el contenido de un elemento y su borde */
+    color: var(--color-primario); /*color de letra de botones */
+    text-align: center; /* alinea al centro la letra en boton */
+    font-family: var(--fuente-montserrat); /* asigna tipo de letra */
+    font-size: 1.5rem; /* asigna tamaño de letra */
+    font-weight: 400; /* asigna peso de la fuente */
+  }
+
+  /* define un punto de quiebre para pantallas con un ancho de hasta 700 píxeles */
+  @media (max-width: 1200px){
+
+    .header{
+      padding: 10%; /* asigna espacio de un 10% en el encabezado */
+    }
+
+    .header__menu{
+      justify-content: center; /* centralizar elementos */
+    }
+
+    .presentacion{
+      flex-direction: column-reverse; /* controla la dirección en la que se apilan 
+      los elementos flex, en este caso, como en columna inversa*/
+      padding: 5%;
+    }
+
+    .presentacion_contenido{
+      width: auto;
+      /* width: 100%; De esta manera, aplicando el 100% en el ancho de la página responsiva, 
+      obtendrá el mismo resultado que con width: auto; y se ajustará automáticamente al tamaño de pantalla.*/
+    }
+  }
